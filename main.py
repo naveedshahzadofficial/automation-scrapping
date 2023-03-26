@@ -36,7 +36,6 @@ while isLoop:
             getLink = WebDriverWait(driver, 60).until(
                 EC.visibility_of_element_located((By.CSS_SELECTOR, '#link-btn a'))
             )
-            getLink.click()
             sleep(15)
             isGetLink = True
             while isGetLink:
