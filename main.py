@@ -18,7 +18,15 @@ with open('links.txt', 'r') as file:
 
         options = Options()
         options.add_argument("--enable-notifications")
-        options.add_experimental_option("detach", True)
+        options.accept_insecure_certs = True
+        options.assume_untrusted_cert_issuer = True
+        options.add_argument("--no-sandbox")
+        options.add_argument("--allow-http-screen-capture")
+        options.add_argument("--disable-impl-side-painting")
+        options.add_argument("--disable-setuid-sandbox")
+        options.add_argument("--disable-seccomp-filter-sandbox")
+
+        # options.add_experimental_option("detach", True)
         driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),
                                   options=options)
 
